@@ -19,5 +19,12 @@ class ViewController: UIViewController {
         print("prueba boton")
     }
     
+    func loadTableView(notification:Notification) {
+        
+    }
+    
+    func requestListTickets(){
+        
+    }
 }
 

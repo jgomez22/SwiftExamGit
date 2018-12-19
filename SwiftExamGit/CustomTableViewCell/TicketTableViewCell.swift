@@ -7,7 +7,7 @@
 //
 
 import UIKit
-    //agregar el datasource,delegate y agregar sus funciones(protocolo)
+    
 class TicketTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
@@ -19,6 +19,14 @@ class TicketTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func addViews() {
+        
+    }
+    
+    func loadWithTicket(tickets:Ticket){
+        
     }
 
 }
