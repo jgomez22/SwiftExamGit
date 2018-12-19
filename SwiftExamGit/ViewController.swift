@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         print("prueba push")
     }
 
-
+    @IBAction func addTaskAsync(_ sender: Any) {
+        print("prueba boton")
+    }
+    
 }
 

@@ -14,6 +14,15 @@
 		CA6C617421CAE7C500BEABBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6C617221CAE7C500BEABBB /* LaunchScreen.storyboard */; };
 		CA6C617F21CAE7C600BEABBB /* SwiftExamGitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C617E21CAE7C600BEABBB /* SwiftExamGitTests.swift */; };
 		CA6C618A21CAE7C600BEABBB /* SwiftExamGitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C618921CAE7C600BEABBB /* SwiftExamGitUITests.swift */; };
+		CA6C619A21CAEB0B00BEABBB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619921CAEB0B00BEABBB /* Ticket.swift */; };
+		CA6C619B21CAEB0B00BEABBB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619921CAEB0B00BEABBB /* Ticket.swift */; };
+		CA6C619C21CAEB0B00BEABBB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619921CAEB0B00BEABBB /* Ticket.swift */; };
+		CA6C619E21CAEB4300BEABBB /* ListTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619D21CAEB4300BEABBB /* ListTicketViewController.swift */; };
+		CA6C619F21CAEB4300BEABBB /* ListTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619D21CAEB4300BEABBB /* ListTicketViewController.swift */; };
+		CA6C61A021CAEB4300BEABBB /* ListTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C619D21CAEB4300BEABBB /* ListTicketViewController.swift */; };
+		CA6C61A321CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C61A221CAEBCD00BEABBB /* TicketTableViewCell.swift */; };
+		CA6C61A421CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C61A221CAEBCD00BEABBB /* TicketTableViewCell.swift */; };
+		CA6C61A521CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6C61A221CAEBCD00BEABBB /* TicketTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,9 @@
 		CA6C618521CAE7C600BEABBB /* SwiftExamGitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftExamGitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6C618921CAE7C600BEABBB /* SwiftExamGitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExamGitUITests.swift; sourceTree = "<group>"; };
 		CA6C618B21CAE7C600BEABBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA6C619921CAEB0B00BEABBB /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		CA6C619D21CAEB4300BEABBB /* ListTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTicketViewController.swift; sourceTree = "<group>"; };
+		CA6C61A221CAEBCD00BEABBB /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,9 @@
 		CA6C616821CAE7C200BEABBB /* SwiftExamGit */ = {
 			isa = PBXGroup;
 			children = (
+				CA6C61A121CAEB9300BEABBB /* CustomTableViewCell */,
+				CA6C619821CAEA9400BEABBB /* CustomTableView */,
+				CA6C619721CAEA8500BEABBB /* Model */,
 				CA6C616921CAE7C200BEABBB /* AppDelegate.swift */,
 				CA6C616B21CAE7C200BEABBB /* ViewController.swift */,
 				CA6C616D21CAE7C200BEABBB /* Main.storyboard */,
@@ -123,6 +138,30 @@
 				CA6C618B21CAE7C600BEABBB /* Info.plist */,
 			);
 			path = SwiftExamGitUITests;
+			sourceTree = "<group>";
+		};
+		CA6C619721CAEA8500BEABBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C619921CAEB0B00BEABBB /* Ticket.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA6C619821CAEA9400BEABBB /* CustomTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C619D21CAEB4300BEABBB /* ListTicketViewController.swift */,
+			);
+			path = CustomTableView;
+			sourceTree = "<group>";
+		};
+		CA6C61A121CAEB9300BEABBB /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA6C61A221CAEBCD00BEABBB /* TicketTableViewCell.swift */,
+			);
+			path = CustomTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6C619E21CAEB4300BEABBB /* ListTicketViewController.swift in Sources */,
 				CA6C616C21CAE7C200BEABBB /* ViewController.swift in Sources */,
+				CA6C61A321CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */,
+				CA6C619A21CAEB0B00BEABBB /* Ticket.swift in Sources */,
 				CA6C616A21CAE7C200BEABBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6C617F21CAE7C600BEABBB /* SwiftExamGitTests.swift in Sources */,
+				CA6C619F21CAEB4300BEABBB /* ListTicketViewController.swift in Sources */,
+				CA6C619B21CAEB0B00BEABBB /* Ticket.swift in Sources */,
+				CA6C61A421CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6C618A21CAE7C600BEABBB /* SwiftExamGitUITests.swift in Sources */,
+				CA6C61A021CAEB4300BEABBB /* ListTicketViewController.swift in Sources */,
+				CA6C619C21CAEB0B00BEABBB /* Ticket.swift in Sources */,
+				CA6C61A521CAEBCD00BEABBB /* TicketTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
