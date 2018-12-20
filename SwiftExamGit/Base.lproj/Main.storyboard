@@ -20,6 +20,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yka-th-z4U">
                                 <rect key="frame" x="149" y="318.5" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="auU-vT-Qe5"/>
+                                </constraints>
                                 <state key="normal" title="Ver Tickets"/>
                                 <connections>
                                     <action selector="addTaskAsync:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKS-HQ-FAV"/>
