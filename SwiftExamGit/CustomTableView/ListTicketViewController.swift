@@ -25,7 +25,7 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        //[tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        self.tableView.backgroundColor = .black
         self.tableView.separatorStyle = .none
         // Do any additional setup after loading the view.
     }
@@ -43,6 +43,7 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
         let cell:TicketTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellId) as! TicketTableViewCell
         cell.addViews()
         cell.loadWithTicket(tickets: self.listTicket[indexPath.row] as! Ticket)
+        cell.backgroundColor = .black
         cell.selectionStyle = .none
         return cell
     }

@@ -41,9 +41,9 @@ class TicketTableViewCell: UITableViewCell {
     func addViews() {
         
         //addContentColor
-        self.ticketView.backgroundColor=UIColor.black.withAlphaComponent(0.1)
+        self.ticketView.backgroundColor=UIColor.white.withAlphaComponent(0.1)
         self.boxCabecera.backgroundColor = .red
-        self.boxCuerpo.backgroundColor = .blue
+        self.boxCuerpo.backgroundColor = .white
         
         //addtoView
         self.addSubview(ticketView)
@@ -127,7 +127,7 @@ class TicketTableViewCell: UITableViewCell {
         //MARK: constraintHoraFuncion
         self.lblHora.translatesAutoresizingMaskIntoConstraints = false
         //top con respecto al top de cabecera
-        constraint2.append(NSLayoutConstraint(item: self.lblHora, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0.0))
+        constraint2.append(NSLayoutConstraint(item: self.lblHora, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0.0))
         //leading con respecto al leading de title
         constraint2.append(NSLayoutConstraint(item: self.lblHora, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.lblTitulo, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0.0))
         
@@ -151,7 +151,9 @@ class TicketTableViewCell: UITableViewCell {
         self.loadFunctionPlace(lugar: tickets.address)
     }
     func loadFunctionPlace(lugar:String){
+        lblLugar.textColor = .white
         lblLugar.text=lugar
+        lblLugar.font = UIFont.italicSystemFont(ofSize: 16.0)
     }
     
     func loadFunctionHour(inicio:String,fin:String){
@@ -166,10 +168,15 @@ class TicketTableViewCell: UITableViewCell {
         
         let i:String = formato12H.string(from: horaInicio!)
         let f:String = formato12H.string(from: horaTermino!)
+        
+        lblHora.textColor = .white
+        lblHora.font = UIFont.systemFont(ofSize: 16.0)
         lblHora.text=i+" - "+f
     }
     
     func loadTitle(titulo:String) {
+        lblTitulo.textColor = .white
+        lblTitulo.font = UIFont.boldSystemFont(ofSize: 24.0)
         lblTitulo.text=titulo
     }
     
@@ -181,6 +188,8 @@ class TicketTableViewCell: UITableViewCell {
         let formatoDia:DateFormatter=DateFormatter()
         formatoDia.dateFormat = "dd"
         let dia:String = formatoDia.string(from: fecha)
+        lblDia.textColor = .white
+        lblDia.font = UIFont.boldSystemFont(ofSize: 18.0)
         lblDia.text=dia
     }
     
@@ -192,7 +201,9 @@ class TicketTableViewCell: UITableViewCell {
         let formatoDia:DateFormatter=DateFormatter()
         formatoDia.dateFormat = "MMM"
         let mes:String = formatoDia.string(from: fecha)
+        lblMes.textColor = .black
         lblMes.text=mes
+        lblMes.font = UIFont.boldSystemFont(ofSize: 18.0)
     }
     
     func loadImage(imagen:String){
