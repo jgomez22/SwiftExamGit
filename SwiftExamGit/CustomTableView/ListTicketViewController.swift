@@ -9,14 +9,22 @@
 import UIKit
 
 class ListTicketViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
     
     var tableView = UITableView()
     var listTicket:Array<Any> = Array()
+    
+    let cellId = "ticketCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tableView.frame = self.view.frame
+        self.tableView.register(TicketTableViewCell.self, forCellReuseIdentifier: cellId)
+        self.view.addSubview(self.tableView)
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,15 +34,20 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //agrega el numero de filas del json
-        return 1
+        return self.listTicket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //modifica
-        let cell:TicketTableViewCell=TicketTableViewCell()
-        //agrega codigo
+        let cell:TicketTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellId) as! TicketTableViewCell
+        cell.addViews()
+        cell.loadWithTicket(tickets: self.listTicket[indexPath.row] as! Ticket)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     
     /*
     // MARK: - Navigation
