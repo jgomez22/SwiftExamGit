@@ -38,8 +38,6 @@ class ViewController: UIViewController {
                 let newTickets:Ticket = Ticket()
                 newTickets.initWithDictionary(data: ticketsDictionary)
                 sendListTickets.append(newTickets)
-                print(sendListTickets)
-                
             }
             
             dispatch_queue_main_t.main.async {
