@@ -12,28 +12,43 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
     
     var tableView = UITableView()
     var listTicket:Array<Any> = Array()
-    
     let cellId = "ticketCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.frame = self.view.frame
+        self.loadTableView()
+    }
+    
+    //MARK: - cargarTabla
+    func loadTableView(){
         self.tableView.register(TicketTableViewCell.self, forCellReuseIdentifier: cellId)
-        self.view.addSubview(self.tableView)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.backgroundColor = .black
         self.tableView.separatorStyle = .none
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubview(self.tableView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints=false
+        var tableConstraint:Array<NSLayoutConstraint>=Array()
+        //top
+        tableConstraint.append(NSLayoutConstraint(item: self.tableView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0.00))
+        //bottom
+        tableConstraint.append(NSLayoutConstraint(item: self.tableView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0.00))
+        //leading
+        tableConstraint.append(NSLayoutConstraint(item: self.tableView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0.00))
+        //trailing
+        tableConstraint.append(NSLayoutConstraint(item: self.tableView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: 0.00))
+        self.view.addConstraints(tableConstraint)
     }
-    
+    //MARK: - setearListaTickets
     func setListTicket(lista:Array<Any>) {
         self.listTicket = lista
     }
     
+    //MARK: - metodosDelegadosTableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //agrega el numero de filas del json
         return self.listTicket.count

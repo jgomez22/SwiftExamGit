@@ -131,7 +131,7 @@ class TicketTableViewCell: UITableViewCell {
         //leading con respecto al leading de title
         constraint2.append(NSLayoutConstraint(item: self.lblHora, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.lblTitulo, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0.0))
         
-        //MARK: constraintHoraFuncion
+        //MARK: constraintLugarFuncion
         self.lblLugar.translatesAutoresizingMaskIntoConstraints = false
         //
         constraint2.append(NSLayoutConstraint(item: self.lblLugar, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.lblHora, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 10.0))
