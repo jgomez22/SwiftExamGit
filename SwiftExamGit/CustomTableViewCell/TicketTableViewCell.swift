@@ -113,16 +113,16 @@ class TicketTableViewCell: UITableViewCell {
         //MARK: constraintDia
         self.lblDia.translatesAutoresizingMaskIntoConstraints = false
         //centrado en X respecto a cabecera
-        constraint2.append(NSLayoutConstraint(item: self.lblDia, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
+        constraint2.append(NSLayoutConstraint(item: self.lblDia, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCuerpo, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
         //centrado en Y respecto a cabecera
-        constraint2.append(NSLayoutConstraint(item: self.lblDia, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0))
+        constraint2.append(NSLayoutConstraint(item: self.lblDia, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCuerpo, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0))
         
         //MARK: constraintMes
         self.lblMes.translatesAutoresizingMaskIntoConstraints = false
         //centrado en X respecto a cabecera
-        constraint2.append(NSLayoutConstraint(item: self.lblMes, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCuerpo, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
+        constraint2.append(NSLayoutConstraint(item: self.lblMes, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
         //centrado en Y respecto a cabecera
-        constraint2.append(NSLayoutConstraint(item: self.lblMes, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCuerpo, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0))
+        constraint2.append(NSLayoutConstraint(item: self.lblMes, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.boxCabecera, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0))
         
         //MARK: constraintHoraFuncion
         self.lblHora.translatesAutoresizingMaskIntoConstraints = false
@@ -188,8 +188,8 @@ class TicketTableViewCell: UITableViewCell {
         let formatoDia:DateFormatter=DateFormatter()
         formatoDia.dateFormat = "dd"
         let dia:String = formatoDia.string(from: fecha)
-        lblDia.textColor = .white
-        lblDia.font = UIFont.boldSystemFont(ofSize: 18.0)
+        lblDia.textColor = .black
+        lblDia.font = UIFont.boldSystemFont(ofSize: 22.0)
         lblDia.text=dia
     }
     
@@ -201,7 +201,7 @@ class TicketTableViewCell: UITableViewCell {
         let formatoDia:DateFormatter=DateFormatter()
         formatoDia.dateFormat = "MMM"
         let mes:String = formatoDia.string(from: fecha)
-        lblMes.textColor = .black
+        lblMes.textColor = .white
         lblMes.text=mes
         lblMes.font = UIFont.boldSystemFont(ofSize: 18.0)
     }
