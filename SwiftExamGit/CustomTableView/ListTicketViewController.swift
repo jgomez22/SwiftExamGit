@@ -16,19 +16,41 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.frame = self.view.frame
-        self.tableView.backgroundColor = .black
-        self.tableView.register(TicketTableViewCell.self , forCellReuseIdentifier: cellId)
-        self.view.addSubview(self.tableView)
+        //self.tableView.frame = self.view.frame
         
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
 
         // Do any additional setup after loading the view.
+        
+        self.loadTableView()
     }
     
     
-   
+    func loadTableView (){
+        self.tableView.backgroundColor = .black
+        self.tableView.register(TicketTableViewCell.self , forCellReuseIdentifier: cellId)
+        
+        
+        
+        var  constraints1:Array<NSLayoutConstraint>=Array()
+        self.view.addSubview(self.tableView)
+        //MARK:constraint tableview
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        constraints1.append(NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0))
+        
+        constraints1.append(NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0))
+        
+        constraints1.append(NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: 0))
+        
+        constraints1.append(NSLayoutConstraint(item: tableView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0))
+        
+        self.view.addConstraints(constraints1)
+        
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
     
     
     func setListTicket(lista:Array<Any>) {
@@ -56,6 +78,17 @@ class ListTicketViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle==UITableViewCell.EditingStyle.delete{
+            self.listTicket.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.middle)
+        }
     }
     /*
     // MARK: - Navigation
